@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title> HTML/CSS Automation </title>
+
+		 <link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" /> 
+
+		<!-- The main CSS file -->
+		<link href="css/style.css" rel="stylesheet" />
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+	<!-- Declare a new AngularJS app and associate the controller -->
+	<body ng-app='myApp' ng-controller="OrderFormController">
+		<section class="html-wrapper">
+			<header class='header'> HTML/CSS Automation </header>
+			<section class='main-section'>
+				<div class='tool-bar'>
+					<ul class='fl'>
+						<li> <a href="#div" elementData='<div id="" class="">&#13;&#10;&#13;&#10;</div>' >div</a> </li>
+						<li> <a href="#span" elementData='<span id="" class=""> </span>' >span</a> </li>
+						<li> <a href="#p" elementData='<p id="" class=""> </p>' >p</a> </li>
+						<li> <a href="#style" elementData='<style type="text/css">&#13;&#10; &#13;&#10;</style>' >style</a> </li>
+						<li> <a href="#select" elementData='<select>&#13;&#10; <option> </option> &#13;&#10; <option> </option>&#13;&#10;</select>' >select </a> </li>
+						<li> <a href="#ul" elementData='<ul>&#13;&#10; <li> </li> &#13;&#10; <li> </li> &#13;&#10;</ul>' > ul  </a> </li>
+						<li> <a href="#a" elementData='<a href=""> </a>' > a  </a> </li>
+						<li> <a href="#img" elementData='<img src="" alt=""  />' > img  </a> </li>
+						<li> <a href="#label" elementData='<label></label>' > label  </a> </li>
+						<li> <a href="#label" elementData='<label></label>' > label  </a> </li>
+						 <!-- <li><div> {{value}} </div></li> -->
+						<div class='cb'></div>
+					</ul>
+
+					<input type='submit' value='Submit' id='btn-submit' class='btn btn-primary fr' ng-click='storeLocal()'  />
+					<div class='cb'></div>
+				</div>
+				<section class='left-section'>
+					<textarea id='html-editor' ng-model="value">
+							 
+					</textarea>
+				</section>
+				<section id='right-section' class='right-section' ng-bind-html="value | to_trusted"></section> 
+				<div class='cb'></div>
+			</section> 
+			<footer class='footer'> copyright@ umesh-2015 corp</footer>
+		</section>
+		<script src="js/angular.min.js"></script>
+		<script src="js/ngStorage.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/script.js"></script>
+		<script type="text/javascript">
+			window.foo = function(){
+				console.log('old foo!');
+			}
+
+			window.addEventListener('load',foo,false);
+		</script>
+		<!-- <script type="text/javascript-lazy">
+		  console.log("It works!");
+		</script> -->
+
+		<!-- <script type="text/javascript">
+			window.addEventListener('load',f,false);
+			function f(){
+				this.list = {};
+
+				this.list['oldHello'] = oldHello;
+
+				function oldHello(){
+					console.log('oldHello');	
+				}
+				
+			}
+
+			// new f().list.oldHello();
+		
+		</script> -->
+	</body>
+</html>
